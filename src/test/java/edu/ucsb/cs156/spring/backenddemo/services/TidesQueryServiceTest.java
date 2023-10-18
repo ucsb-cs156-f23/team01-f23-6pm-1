@@ -24,14 +24,13 @@ public class TidesQueryServiceTest {
     @Test
     public void test_getJSON() {
 
-        String beginDate = "";
-        String endDate = "";
-        String station = "";
+        String beginDate = "20250801";
+        String endDate = "20250831";
+        String station = "8557863";
 
-        String expectedURL = EarthquakeQueryService.ENDPOINT.replace("{beginDate}", beginDate)
+        String expectedURL = TidesQueryService.ENDPOINT.replace("{beginDate}", beginDate)
                 .replace("{endDate}", endDate).replace("{station}", station);
 
-        //TODO: continue from here
         String fakeJsonResult = "{ \"fake\" : \"result\" }";
 
         this.mockRestServiceServer.expect(requestTo(expectedURL))
