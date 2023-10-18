@@ -12,6 +12,7 @@ Lab instructions: <https://ucsb-cs156.github.io/f23/lab/team01.html>
 |           |           | `TidesQueryService`         | `TidesController`         |   
 |           |           | `UniversityQueryService`    | `UniversityController`    |
 |           |           | `ZipCodeQueryService`       | `ZipCodeController`       |
+|           |           | `JokeQueryService`          | `JokeController`          |
 ```
 
 
