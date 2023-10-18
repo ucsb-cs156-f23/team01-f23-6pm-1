@@ -1,39 +1,27 @@
-# STARTER-team01
+# f23-6pm-1-team01
 
 Lab instructions: <https://ucsb-cs156.github.io/f23/lab/team01.html>
 
 * TODO: Update the following table, then delete this line that says "TODO".
 
 ```
-|   Name    | GitHub Id |  Service                    | Controller                |
-|-----------|-----------|-----------------------------|---------------------------| 
-|           |           | `LocationQueryService`      | `LocationController`      |   
-|           |           | `PublicHolidayQueryService` | `PublicHolidayController` |   
-|           |           | `TidesQueryService`         | `TidesController`         |   
-|           |           | `UniversityQueryService`    | `UniversityController`    |
-|           |           | `ZipCodeQueryService`       | `ZipCodeController`       |
-|           |           | `JokeQueryService`          | `JokeController`          |
+|   Name    | GitHub Id    |  Service                    | Controller                |
+|-----------|--------------|-----------------------------|---------------------------| 
+|Erwan      |ErwanDev      | `LocationQueryService`      | `LocationController`      |   
+|Dagin      |Dagin-Gregory | `PublicHolidayQueryService` | `PublicHolidaysController`|   
+|Alexander  |chauAlex      | `TidesQueryService`         | `TidesController`         |   
+|Jake       |jakedel       | `UniversityQueryService`    | `UniversityController`    |
+|Joseph     |Joseph-Foster | `ZipCodeQueryService`       | `ZipCodeController`       |
+|Johnson    |Johnsonchan105| `JokeQueryService`          | `JokeController`          |
 ```
-
-
-* TODO: Change the title of this README 
-  in the text `# STARTER-team01` above
-  to match the name of your repo, i. e., `f23-5pm-2-team01`, then delete
-  this TODO item.
-
-* TODO: Correct the links to repo below, 
-  then delete this TODO.  Replace it with 
-  a link to your repo, e.g. 
-  https://github.com/ucsb-cs156-f23/f23-5pm-2-team01
-
-Repo: https://ucsb-cs156-f23/STARTER-team01
+Repo: <https://github.com/ucsb-cs156-f23/team01-f23-6pm-1>
 
 * TODO: Correct the links to app on Dokku below, 
   then delete this TODO.  Replace it with 
   a link to your running app on Dokku, e.g.
   https://team01.dokku-00.cs.ucsb.edu
 
-On Heroku: https://team01.dokku-00.cs.ucsb.edu
+On Dokku: https://team01.dokku-00.cs.ucsb.edu
 
 ## About this repo
 
