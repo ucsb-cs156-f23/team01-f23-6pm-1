@@ -23,4 +23,4 @@ repo_name: "TBD"
 repo: ucsb-cs156-f23/team01-f23-6pm-1
 owner: ucsb-cs156-f23
 repo_name: team01-f23-6pm-1
-pull_requests: [{"author":{"id":"MDQ6VXNlcjIyNDU0MjE4","is_bot":false,"login":"Dagin-Gregory","name":"Dagin Gregory"},"headRefName":"DG-PublicHoliday","number":21,"title":"Dg public holiday","url":"https://github.com/ucsb-cs156-f23/team01-f23-6pm-1/pull/21"},{"author":{"id":"U_kgDOBXj-Bg","is_bot":false,"login":"chauAlex","name":""},"headRefName":"Alex-Tides","number":20,"title":"Add Tides Service and Test Coverage","url":"https://github.com/ucsb-cs156-f23/team01-f23-6pm-1/pull/20"}]
+pull_requests: [{"author":{"id":"U_kgDOBXj-Bg","is_bot":false,"login":"chauAlex","name":""},"headRefName":"Alex-Tides","number":20,"title":"Add Tides Service and Test Coverage","url":"https://github.com/ucsb-cs156-f23/team01-f23-6pm-1/pull/20"}]
