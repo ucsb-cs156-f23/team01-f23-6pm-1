@@ -27,7 +27,7 @@ public class PublicHolidaysControllerTests {
 
 
   @Test
-  public void test_getEarthquakes() throws Exception {
+  public void test_getPublicHolidays() throws Exception {
   
     String fakeJsonResult="{ \"fake\" : \"result\" }";
     String year = "2023";
