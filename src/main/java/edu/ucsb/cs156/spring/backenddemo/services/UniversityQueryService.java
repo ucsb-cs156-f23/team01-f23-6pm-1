@@ -1,7 +1,5 @@
 package edu.ucsb.cs156.spring.backenddemo.services;
 
-
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import org.springframework.web.client.RestTemplate;
@@ -17,16 +15,15 @@ import org.springframework.web.client.HttpClientErrorException;
 @Service
 public class UniversityQueryService {
 
-
     private final RestTemplate restTemplate;
 
     public UniversityQueryService(RestTemplateBuilder restTemplateBuilder) {
         restTemplate = restTemplateBuilder.build();
     }
 
-    public static final String ENDPOINT = "";
+    public static final String ENDPOINT = "http://universities.hipolabs.com/search?name={name}";
 
     public String getJSON(String name) throws HttpClientErrorException {
-       return "";
+        return "";
     }
 }
