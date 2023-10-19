@@ -24,7 +24,7 @@ public class LocationQueryService {
         restTemplate = restTemplateBuilder.build();
     }
 
-    public static final String ENDPOINT = "https://nominatim.openstreetmap.org/search/{location}?format=json";
+    public static final String ENDPOINT = "https://nominatim.openstreetmap.org/search?q={location}&format=json";
 
     public String getJSON(String location) throws HttpClientErrorException {
 
