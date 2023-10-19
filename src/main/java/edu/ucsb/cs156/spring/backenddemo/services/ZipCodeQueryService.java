@@ -2,8 +2,6 @@ package edu.ucsb.cs156.spring.backenddemo.services;
 
 import org.springframework.web.client.RestTemplate;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.util.List;
 import java.util.Map;
 
@@ -18,8 +16,6 @@ import org.springframework.web.client.HttpClientErrorException;
 
 @Service
 public class ZipCodeQueryService {
-
-    ObjectMapper mapper = new ObjectMapper();
 
     private final RestTemplate restTemplate;
 
@@ -38,8 +34,7 @@ public class ZipCodeQueryService {
 
         HttpEntity<String> entity = new HttpEntity<>("body", headers);
         
-        ResponseEntity<String> re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class,
-                uriVariables);
+        ResponseEntity<String> re = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class, uriVariables);
         return re.getBody();
     }
 }
