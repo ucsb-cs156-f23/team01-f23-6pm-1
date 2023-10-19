@@ -1,11 +1,5 @@
 package edu.ucsb.cs156.spring.backenddemo.services;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
-import org.springframework.web.client.RestTemplate;
-
-import lombok.extern.slf4j.Slf4j;
-
 import java.util.List;
 import java.util.Map;
 
@@ -17,6 +11,9 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.client.RestTemplate;
+
+import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @Service
