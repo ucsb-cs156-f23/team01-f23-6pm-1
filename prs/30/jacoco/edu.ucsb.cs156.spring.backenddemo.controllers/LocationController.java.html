@@ -18,24 +18,23 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Tag(name=&quot;Location info from Open Street Map&quot;)
-<span class="fc" id="L22">@Slf4j</span>
+@Tag(name=&quot;location-controller&quot;)
 @RestController
 @RequestMapping(&quot;/api/locations&quot;)
-<span class="fc" id="L25">public class LocationController {</span>
+<span class="fc" id="L24">public class LocationController {</span>
     
-<span class="fc" id="L27">    ObjectMapper mapper = new ObjectMapper();</span>
+<span class="fc" id="L26">    ObjectMapper mapper = new ObjectMapper();</span>
 
     @Autowired
     LocationQueryService locationQueryService;
 
-    @Operation(summary = &quot;Get information regarding a location&quot;, description = &quot;JSON return format documented here: https://nominatim.openstreetmap.org/ui/about.html&quot;)
+    @Operation(summary = &quot;Location info from nominatim.org&quot;, description = &quot;Uses API documented here: https://nominatim.org/release-docs/develop/api/Search/&quot;)
     @GetMapping(&quot;/get&quot;)
     public ResponseEntity&lt;String&gt; getLocation(
-        @Parameter(name=&quot;location&quot;, description=&quot;location for query&quot;, example=&quot;Goleta&quot;) @RequestParam String location
+        @Parameter(name=&quot;location&quot;, description=&quot;name to search, e.g. 'Isla Vista' or 'Eiffel Tower'&quot;, example=&quot;Goleta&quot;) @RequestParam String location
     ) throws JsonProcessingException {
-<span class="fc" id="L37">        String result = locationQueryService.getJSON(location);</span>
-<span class="fc" id="L38">        return ResponseEntity.ok().body(result);</span>
+<span class="fc" id="L36">        String result = locationQueryService.getJSON(location);</span>
+<span class="fc" id="L37">        return ResponseEntity.ok().body(result);</span>
     }
 
 }
