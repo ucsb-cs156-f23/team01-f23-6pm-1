@@ -17,7 +17,7 @@ import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 
-@Tag(name=&quot;Zip Code information from https://api.zippopotam.us/&quot;)
+@Tag(name=&quot;Zip Code Information from https://api.zippopotam.us/&quot;)
 @RestController
 @RequestMapping(&quot;/api/zipcodes&quot;)
 <span class="fc" id="L23">public class ZipCodeController {</span>
@@ -27,10 +27,10 @@ import io.swagger.v3.oas.annotations.tags.Tag;
     @Autowired
     ZipCodeQueryService zipCodeQueryService;
 
-    @Operation(summary=&quot;Get info about a zipcode&quot;)
+    @Operation(summary=&quot;Get information about a us zipcode&quot;, description = &quot;JSON return format documented here: https://api.zippopotam.us/&quot;)
     @GetMapping(&quot;/get&quot;)
     public ResponseEntity&lt;String&gt; getCountryCodes(
-        @Parameter(name=&quot;zipcode&quot;, example=&quot;93106&quot;) @RequestParam String zipcode
+        @Parameter(name=&quot;zipcode&quot;, description=&quot;US zipcode&quot;, example=&quot;93106&quot;) @RequestParam String zipcode
     ) throws JsonProcessingException {
 <span class="fc" id="L35">        String result = zipCodeQueryService.getJSON(zipcode);</span>
 <span class="fc" id="L36">        return ResponseEntity.ok().body(result);</span>
