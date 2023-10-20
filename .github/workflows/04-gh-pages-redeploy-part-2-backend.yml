@@ -130,7 +130,6 @@ jobs:
       uses: actions/download-artifact@v2.1.1
       with:
         path: $ {{ env.jacoco_dest }}
-        workflow: 02-gh-pages-rebuild-part-1.yml
         # Artifact name
         name: jacoco
         # Destination path
