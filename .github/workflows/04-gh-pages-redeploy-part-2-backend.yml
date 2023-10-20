@@ -129,10 +129,14 @@ jobs:
     - name: c-jacoco Download Artifact
       uses: actions/download-artifact@v2.1.1
       with:
+        path: $ {{ env.jacoco_dest }}
+        workflow: 02-gh-pages-rebuild-part-1.yml
         # Artifact name
         name: jacoco
         # Destination path
-        path: $ {{ env.jacoco_dest }} 
+        check_artifacts: true
+        if_no_artifact_found: error
+        
     #- name: c-jacoco Download artifact
     #  uses: dawidd6/action-download-artifact@v2.27.0
     #  with:
