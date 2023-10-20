@@ -125,7 +125,6 @@ jobs:
   
     - name: c-jacoco Make directory in case it doesn't exist
       run: mkdir -p ${{ env.jacoco_dest }}
-      
     - name: c-jacoco Download artifact
       uses: dawidd6/action-download-artifact@v2.27.0
       with:
@@ -134,17 +133,6 @@ jobs:
         path: ${{ env.jacoco_dest }}
         check_artifacts: true
         if_no_artifact_found: error
-        
-    #- name: c-jacoco Download artifact
-    #  uses: dawidd6/action-download-artifact@v2.27.0
-    #  with:
-    #    workflow: 02-gh-pages-rebuild-part-1.yml
-    #    github_token: ${{ github.token }}
-    #    name: jacoco
-    #    path: ${{ env.jacoco_dest }}
-    #    check_artifacts: true
-    #    if_no_artifact_found: error
-
     - name: c-jacoco Deploy Jacoco (Main) 🚀
       uses: JamesIves/github-pages-deploy-action@v4
       with:
@@ -159,7 +147,6 @@ jobs:
     - name:  d-pitest Download artifact
       uses: dawidd6/action-download-artifact@v2.27.0
       with:
-        workflow: 02-gh-pages-rebuild-part-1.yml
         github_token: ${{ github.token }}
         name: pitest
         path: ${{ env.pitest_dest }}
