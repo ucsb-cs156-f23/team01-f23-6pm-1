@@ -126,13 +126,12 @@ jobs:
     - name: c-jacoco Make directory in case it doesn't exist
       run: mkdir -p ${{ env.jacoco_dest }}
       
-    - name: c-jacoco Download Artifact
-      uses: actions/download-artifact@v2.1.1
+    - name: c-jacoco Download artifact
+      uses: dawidd6/action-download-artifact@v2.27.0
       with:
-        path: $ {{ env.jacoco_dest }}
-        # Artifact name
+        github_token: ${{ github.token }}
         name: jacoco
-        # Destination path
+        path: ${{ env.jacoco_dest }}
         check_artifacts: true
         if_no_artifact_found: error
         
