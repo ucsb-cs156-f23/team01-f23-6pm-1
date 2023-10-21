@@ -106,21 +106,11 @@ jobs:
     - name: a-javadoc Download artifact
       uses: dawidd6/action-download-artifact@v2
       with:
+        name: javadoc
         workflow : 02-gh-pages-rebuild-part-1-backend.yml
         workflow_conclusion: success
-        commit: ${{github.event.pull_request.head.sha}}
-
-        #name: javadoc
-        #path: ${{ env.javadoc_dest }}
-    #- name: a-javadoc Download artifact
-    #  uses: dawidd6/action-download-artifact@v2.27.0
-    # with:
-    #    github_token: ${{ github.token }}
-    #    workflow: 02-gh-pages-rebuild-part-1-backend
-    #    name: javadoc
-    #    path: ${{ env.javadoc_dest }}
-    #    check_artifacts: true
-    #    if_no_artifact_found: error
+        #commit: ${{github.event.pull_request.head.sha}}
+        
     - name: a-javadoc Debugging output
       run: | 
         ls -lRt
