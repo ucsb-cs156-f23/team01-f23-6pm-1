@@ -104,14 +104,21 @@ jobs:
     - name: a-javadoc Make directory in case it doesn't exist
       run: mkdir -p ${{ env.javadoc_dest  }}
     - name: a-javadoc Download artifact
-      uses: dawidd6/action-download-artifact@v2.27.0
+      uses: actions/download-artifact@v2.1.1
       with:
-        github_token: ${{ github.token }}
-        workflow: 02-gh-pages-rebuild-part-1-backend
+        # Artifact name
         name: javadoc
+        # Destination path
         path: ${{ env.javadoc_dest }}
-        check_artifacts: true
-        if_no_artifact_found: error
+    #- name: a-javadoc Download artifact
+    #  uses: dawidd6/action-download-artifact@v2.27.0
+    # with:
+    #    github_token: ${{ github.token }}
+    #    workflow: 02-gh-pages-rebuild-part-1-backend
+    #    name: javadoc
+    #    path: ${{ env.javadoc_dest }}
+    #    check_artifacts: true
+    #    if_no_artifact_found: error
     - name: a-javadoc Debugging output
       run: | 
         ls -lRt
