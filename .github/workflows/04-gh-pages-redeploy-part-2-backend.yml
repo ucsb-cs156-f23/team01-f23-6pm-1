@@ -106,9 +106,8 @@ jobs:
     - name: a-javadoc Download artifact
       uses: actions/download-artifact@v2.1.1
       with:
-        # Artifact name
         name: javadoc
-        # Destination path
+        needs: build
         path: ${{ env.javadoc_dest }}
     #- name: a-javadoc Download artifact
     #  uses: dawidd6/action-download-artifact@v2.27.0
