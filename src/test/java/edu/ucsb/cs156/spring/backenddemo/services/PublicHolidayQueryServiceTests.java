@@ -4,10 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.client.RestClientTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.client.MockRestServiceServer;
-
+import org.springframework.web.client.HttpClientErrorException;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.requestTo;
 import static org.springframework.test.web.client.response.MockRestResponseCreators.withSuccess;
 import static org.springframework.test.web.client.match.MockRestRequestMatchers.header;
@@ -35,8 +36,16 @@ public class PublicHolidayQueryServiceTests {
                 .andExpect(header("Accept", MediaType.APPLICATION_JSON.toString()))
                 .andExpect(header("Content-Type", MediaType.APPLICATION_JSON.toString()))
                 .andRespond(withSuccess(fakeJsonResult, MediaType.APPLICATION_JSON));
+        
+        String actualResult = publicHolidayQueryService.getJSON(year, countryCode);
 
-        String actualResult = publicHolidayQueryService.getJSON("2023", "US");
         assertEquals(fakeJsonResult, actualResult);
+    }
+
+    @Test
+    public void test_getJSON_InvalidYear(){
+        String year = "-1";
+        String countryCode = "US";
+        assertThrows(HttpClientErrorException.class, () -> {publicHolidayQueryService.getJSON(year, countryCode);});
     }
 }
