@@ -129,6 +129,7 @@ jobs:
       uses: dawidd6/action-download-artifact@v2
       with:
         name: jacoco
+        path: ${{env.jacoco_dest }}
         workflow : 02-gh-pages-rebuild-part-1-backend.yml
         workflow_conclusion: success
     - name: c-jacoco Deploy Jacoco (Main) 🚀
@@ -146,6 +147,7 @@ jobs:
       uses: dawidd6/action-download-artifact@v2
       with:
         name: pitest
+        path: ${{env.pitest_dest }}
         workflow : 02-gh-pages-rebuild-part-1-backend.yml
         workflow_conclusion: success
     - name:  d-pitest Deploy Pitest (main) 🚀
@@ -180,6 +182,7 @@ jobs:
       uses: dawidd6/action-download-artifact@v2
       with:
         name: javadoc
+        path: ${{env.javadoc_dest }}
         workflow : 02-gh-pages-rebuild-part-1-backend.yml
         workflow_conclusion: success
     - name: a-javadoc Deploy Javadoc (PR ${{ matrix.value.number }}) 🚀
@@ -197,6 +200,7 @@ jobs:
       uses: dawidd6/action-download-artifact@v2
       with:
         name: jacoco
+        path: ${{env.jacoco_dest }}
         workflow : 02-gh-pages-rebuild-part-1-backend.yml
         workflow_conclusion: success
     - name: c-jacoco Deploy Jacoco (PR ${{ matrix.value.number }}) 🚀
@@ -213,6 +217,7 @@ jobs:
       uses: dawidd6/action-download-artifact@v2
       with:
         name: pitest
+        path: ${{env.pitest_dest }}
         workflow : 02-gh-pages-rebuild-part-1-backend.yml
         workflow_conclusion: success
     - name: d-pitest Deploy Pitest (PR ${{ matrix.value.number }}) 🚀
