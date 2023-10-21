@@ -107,6 +107,7 @@ jobs:
       uses: dawidd6/action-download-artifact@v2.27.0
       with:
         github_token: ${{ github.token }}
+        workflow: 02-gh-pages-rebuild-part-1-backend
         name: javadoc
         path: ${{ env.javadoc_dest }}
         check_artifacts: true
