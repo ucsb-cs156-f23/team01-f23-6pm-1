@@ -31,7 +31,7 @@ public class PublicHolidayQueryService {
 
     public String getJSON(String year, String countryCode) throws HttpClientErrorException {
         //Assume year is a valid integer (No valid years before 1972 | No valid country codes longer than 3)
-        if(Integer.parseInt(year) < 1972)
+        if(Integer.parseInt(year) <= 1972)
             throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, "Ensure the year: " + year + " | and the country code: " + countryCode + " | are valid.");
 
         HttpHeaders headers = new HttpHeaders();

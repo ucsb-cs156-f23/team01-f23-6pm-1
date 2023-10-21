@@ -44,7 +44,7 @@ public class PublicHolidayQueryServiceTests {
 
     @Test
     public void test_getJSON_InvalidYear(){
-        String year = "-1";
+        String year = "1972";
         String countryCode = "US";
         assertThrows(HttpClientErrorException.class, () -> {publicHolidayQueryService.getJSON(year, countryCode);});
     }
