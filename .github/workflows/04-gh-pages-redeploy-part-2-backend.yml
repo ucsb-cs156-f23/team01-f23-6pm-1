@@ -104,9 +104,12 @@ jobs:
     - name: a-javadoc Make directory in case it doesn't exist
       run: mkdir -p ${{ env.javadoc_dest  }}
     - name: a-javadoc Download artifact
-      #uses: actions/download-artifact@v2.1.1
-      uses: actions/download-artifact@v3
-      #with:
+      uses: dawidd6/action-download-artifact@v2
+      with:
+        workflow : 02-gh-pages-rebuild-part-1-backend.yml
+        workflow_conclusion: success
+        commit: ${{github.event.pull_request.head.sha}}
+
         #name: javadoc
         #path: ${{ env.javadoc_dest }}
     #- name: a-javadoc Download artifact
