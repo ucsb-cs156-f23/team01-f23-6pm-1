@@ -17,32 +17,33 @@ import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.HttpClientErrorException;
 
+//Added to make a new PR to close issue.
 @Service
 public class PublicHolidayQueryService {
 
 
     private final RestTemplate restTemplate;
 
-<span class="fc" id="L26">    public PublicHolidayQueryService(RestTemplateBuilder restTemplateBuilder) {</span>
-<span class="fc" id="L27">        restTemplate = restTemplateBuilder.build();</span>
-<span class="fc" id="L28">    }</span>
+<span class="fc" id="L27">    public PublicHolidayQueryService(RestTemplateBuilder restTemplateBuilder) {</span>
+<span class="fc" id="L28">        restTemplate = restTemplateBuilder.build();</span>
+<span class="fc" id="L29">    }</span>
 
     public static final String ENDPOINT = &quot;https://date.nager.at/api/v2/publicholidays/{year}/{countryCode}&quot;;
-
+    
     public String getJSON(String year, String countryCode) throws HttpClientErrorException {
         //Assume year is a valid integer (No valid years before 1972 | No valid country codes longer than 3)
-<span class="fc bfc" id="L34" title="All 2 branches covered.">        if(Integer.parseInt(year) &lt;= 1972)</span>
-<span class="fc" id="L35">            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, &quot;Ensure the year: &quot; + year + &quot; | and the country code: &quot; + countryCode + &quot; | are valid.&quot;);</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">        if(Integer.parseInt(year) &lt;= 1972)</span>
+<span class="fc" id="L36">            throw new HttpClientErrorException(HttpStatus.BAD_REQUEST, &quot;Ensure the year: &quot; + year + &quot; | and the country code: &quot; + countryCode + &quot; | are valid.&quot;);</span>
 
-<span class="fc" id="L37">        HttpHeaders headers = new HttpHeaders();</span>
-<span class="fc" id="L38">        headers.setAccept(List.of(MediaType.APPLICATION_JSON));</span>
-<span class="fc" id="L39">        headers.setContentType(MediaType.APPLICATION_JSON);</span>
+<span class="fc" id="L38">        HttpHeaders headers = new HttpHeaders();</span>
+<span class="fc" id="L39">        headers.setAccept(List.of(MediaType.APPLICATION_JSON));</span>
+<span class="fc" id="L40">        headers.setContentType(MediaType.APPLICATION_JSON);</span>
 
-<span class="fc" id="L41">        HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(headers);</span>
-<span class="fc" id="L42">        Map&lt;String, String&gt; uriVariables = Map.of(&quot;year&quot;, year, &quot;countryCode&quot;, countryCode);</span>
-<span class="fc" id="L43">        ResponseEntity&lt;String&gt; response = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class, uriVariables);</span>
+<span class="fc" id="L42">        HttpEntity&lt;String&gt; entity = new HttpEntity&lt;&gt;(headers);</span>
+<span class="fc" id="L43">        Map&lt;String, String&gt; uriVariables = Map.of(&quot;year&quot;, year, &quot;countryCode&quot;, countryCode);</span>
+<span class="fc" id="L44">        ResponseEntity&lt;String&gt; response = restTemplate.exchange(ENDPOINT, HttpMethod.GET, entity, String.class, uriVariables);</span>
 
-<span class="fc" id="L45">        return response.getBody();</span>
+<span class="fc" id="L46">        return response.getBody();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
