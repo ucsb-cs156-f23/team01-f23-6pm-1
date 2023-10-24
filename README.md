@@ -3,14 +3,14 @@
 Lab instructions: <https://ucsb-cs156.github.io/f23/lab/team01.html>
 
 ```
-|   Name    | GitHub Id    |  Service                    | Controller                |
-|-----------|--------------|-----------------------------|---------------------------| 
-|Erwan      |ErwanDev      | `LocationQueryService`      | `LocationController`      |   
-|Dagin      |Dagin-Gregory | `PublicHolidayQueryService` | `PublicHolidaysController`|   
-|Alexander  |chauAlex      | `TidesQueryService`         | `TidesController`         |   
-|Jake       |jakedel       | `UniversityQueryService`    | `UniversityController`    |
-|Joseph     |Joseph-Foster | `ZipCodeQueryService`       | `ZipCodeController`       |
-|Johnson    |Johnsonchan105| `JokeQueryService`          | `JokeController`          |
+|   Name    | GitHub Id    |  Service                   | Controller                |
+|-----------|--------------|----------------------------|---------------------------| 
+|Erwan      |ErwanDev      | `LocationQueryService`     | `LocationController`      |   
+|Dagin      |Dagin-Gregory | `PublicHolidayQueryService`| `PublicHolidaysController`|   
+|Alexander  |chauAlex      | `TidesQueryService`        | `TidesController`         |   
+|Jake       |jakedel       | `UniversityQueryService`   | `UniversityController`    |
+|Joseph     |Joseph-Foster | `ZipCodeQueryService`      | `ZipCodeController`       |
+|Johnson    |Johnsonchan105| `JokeQueryService`         | `JokeController`          |
 ```
 Repo: <https://github.com/ucsb-cs156-f23/team01-f23-6pm-1>
 
