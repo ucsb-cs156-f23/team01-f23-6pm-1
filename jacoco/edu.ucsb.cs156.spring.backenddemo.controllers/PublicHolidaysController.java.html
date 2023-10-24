@@ -16,12 +16,14 @@ import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 
+//Adding comment to create new PR
+
 @Tag(name=&quot;Public Holidays Controller&quot;)
-<span class="fc" id="L20">@Slf4j</span>
+<span class="fc" id="L22">@Slf4j</span>
 @RequestMapping(&quot;/api/publicholidays&quot;)
 @RestController
-<span class="fc" id="L23">public class PublicHolidaysController {</span>
-<span class="fc" id="L24">    ObjectMapper mapper = new ObjectMapper();</span>
+<span class="fc" id="L25">public class PublicHolidaysController {</span>
+<span class="fc" id="L26">    ObjectMapper mapper = new ObjectMapper();</span>
 
     @Autowired
     PublicHolidayQueryService publicHolidayQueryService;
@@ -35,9 +37,9 @@ import lombok.extern.slf4j.Slf4j;
         @Parameter(name=&quot;year&quot;, description=&quot;relevant year&quot;, example=&quot;2023&quot;) @RequestParam String year,
         @Parameter(name=&quot;countryCode&quot;, description=&quot;relevant country code&quot;, example=&quot;US&quot;) @RequestParam String countryCode
     ) throws JsonProcessingException {
-<span class="fc" id="L38">        log.info(&quot;getpublicholidays: year={} countryCode={}&quot;, year, countryCode);</span>
-<span class="fc" id="L39">        String result = publicHolidayQueryService.getJSON(year, countryCode);</span>
-<span class="fc" id="L40">        return ResponseEntity.ok().body(result);</span>
+<span class="fc" id="L40">        log.info(&quot;getpublicholidays: year={} countryCode={}&quot;, year, countryCode);</span>
+<span class="fc" id="L41">        String result = publicHolidayQueryService.getJSON(year, countryCode);</span>
+<span class="fc" id="L42">        return ResponseEntity.ok().body(result);</span>
     }
 
 }
